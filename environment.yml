@@ -1,0 +1,10 @@
+name: py-2d-3d
+channels:
+  - defaults
+dependencies:
+  - flake8
+  - matplotlib
+  - numpy
+  - pillow
+  - python=3.7
+  - python-dateutil

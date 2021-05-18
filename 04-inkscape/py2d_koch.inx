@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+	<_name>Koch Snowflake</_name>
+	<id>py_2d.kochsnowflake</id>
+	<dependency type="executable" location="extensions">py2d.py</dependency>
+	<dependency type="executable" location="extensions">py2d_koch.py</dependency>
+
+	<param name='active-tab' type="notebook">
+		<page name="title" gui-text="Koch Snowflake Properties">
+            <param name="unit" gui-text="Measurement Units" type="optiongroup" appearance="minimal">
+                <option value="mm">mm</option>
+                <option value="cm">cm</option>
+                <option value="in">in</option>
+            </param>
+			<separator/>
+			<param name="size"       type="float" min="10.0" max="1000.0" precision="3" gui-text="Triangle Size">60.0</param>
+			<param name="iterations" type="int"   min="0"    max="6"                    gui-text="Iterations">2</param>
+			<param name="linec"      type="color" appearance="colorbutton"              gui-text="Line Color">#000000</param>
+			<param name="fillc"      type="color" appearance="colorbutton"              gui-text="Fill Color">#00ffff</param>
+			<separator/>
+            <param name="linethickness" gui-text="Line Thickness" type="optiongroup" appearance="minimal">
+                <option value="1px">1 pixel</option>
+                <option value="0.002in">hairline</option>
+            </param>
+		</page>
+		<page name="Usage1" gui-text="Help">
+			<label xml:space="preserve">Koch Snowflake: Help
+
+
+Measurement Units: Unit of measurement for all subsequent values entered in this dialog.
+
+
+Triangle Size: Length of one side for the original base triangle.
+
+Iterations: Number of recursive iterations for Koch Snowflake generation.
+  0 = 3 lines.
+  1 = 12 lines.
+  2 = 48 lines.
+  3 = 192 lines.
+  4 = 768 lines.
+  5 = 3,072 lines.
+  6 = 12,288 lines.
+
+Line Color: Outline color.
+Fill Color: Snowflake fill color.
+
+
+Line Thickness: Thickness of the line.
+
+
+Reference: https://en.wikipedia.org/wiki/Koch_snowflake
+
+
+			</label>
+		</page>
+	</param>
+	<effect>
+	<object-type>all</object-type>
+		<effects-menu>
+			<submenu _name="Py-2d-3d">
+			</submenu>
+		</effects-menu>
+	</effect>
+	<script>
+		<command reldir="extensions" interpreter="python">py2d_koch.py</command>
+	</script>
+</inkscape-extension>
